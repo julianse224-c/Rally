@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rally Ingeniería Automotriz</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Bebas+Neue&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════ LOADER ═══ -->
+  <div id="page-loader">
+    <div class="loader-scene">
+      <div class="loader-gear gear-big">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <use href="#gear-shape"/>
+        </svg>
+      </div>
+      <div class="loader-gear gear-small">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <use href="#gear-shape"/>
+        </svg>
+      </div>
+      <div class="loader-wrench">
+        <svg viewBox="0 0 60 120" xmlns="http://www.w3.org/2000/svg">
+          <use href="#wrench-shape"/>
+        </svg>
+      </div>
+      <div class="loader-brand">
+        
+        <div class="loader-bar"><div class="loader-fill"></div></div>
+        <p class="loader-text">Cargando sistema...</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════ SVG DEFS ═══ -->
+  <svg style="display:none">
+    <defs>
+      <symbol id="gear-shape" viewBox="0 0 100 100">
+        <path fill="currentColor" d="
+          M43.3,0 L56.7,0 L59.4,14.2 C62.8,15.3 66,16.9 68.9,18.9 L82.7,13.8 L92.2,23.3 L87.1,37.1
+          C89.1,40,90.7,43.2,91.8,46.6 L106,49.3 L106,62.7 L91.8,65.4 C90.7,68.8,89.1,72,87.1,74.9
+          L92.2,88.7 L82.7,98.2 L68.9,93.1 C66,95.1,62.8,96.7,59.4,97.8 L56.7,112 L43.3,112 L40.6,97.8
+          C37.2,96.7,34,95.1,31.1,93.1 L17.3,98.2 L7.8,88.7 L12.9,74.9 C10.9,72,9.3,68.8,8.2,65.4
+          L-6,62.7 L-6,49.3 L8.2,46.6 C9.3,43.2,10.9,40,12.9,37.1 L7.8,23.3 L17.3,13.8 L31.1,18.9
+          C34,16.9,37.2,15.3,40.6,14.2 Z
+          M50,34 A16,16 0 1,0 50,66 A16,16 0 1,0 50,34 Z"/>
+      </symbol>
+      <symbol id="wrench-shape" viewBox="0 0 60 120">
+        <path fill="currentColor" d="
+          M38,0 C52,4 60,16 56,28 C54,34 50,38 44,40 L44,96 C44,102 40,108 34,110
+          C28,112 22,108 20,102 L20,40 C14,38 10,34 8,28 C4,16 12,4 26,0
+          C22,6 22,14 26,18 L30,20 L34,18 C38,14 38,6 34,0 Z"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- ═══════════════════════════════════════════ TRANSITION OVERLAY ═══ -->
+  <div id="page-transition">
+    <div class="transition-gear t-gear-1">
+      <svg viewBox="0 0 100 100"><use href="#gear-shape"/></svg>
+    </div>
+    <div class="transition-gear t-gear-2">
+      <svg viewBox="0 0 100 100"><use href="#gear-shape"/></svg>
+    </div>
+    <div class="transition-wrench t-wrench">
+      <svg viewBox="0 0 60 120"><use href="#wrench-shape"/></svg>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════ SIDEBAR MENU ═══ -->
+  <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+    <span></span><span></span><span></span>
+  </button>
+
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <img src="LOGO.jpeg" alt="Rally Logo" class="sidebar-logo"/>
+      <button class="sidebar-close" id="sidebarClose">✕</button>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#inicio"    class="nav-link" data-section="inicio">   <i class="fas fa-home"></i>          Inicio</a></li>
+      <li><a href="#nosotros"  class="nav-link" data-section="nosotros"> <i class="fas fa-users-gear"></i>    Sobre Nosotros</a></li>
+      <li><a href="#servicios" class="nav-link" data-section="servicios"><i class="fas fa-wrench"></i>        Servicios</a></li>
+      <li><a href="#repuestos" class="nav-link" data-section="repuestos"><i class="fas fa-cogs"></i>          Repuestos</a></li>
+      <li><a href="#contacto"  class="nav-link" data-section="contacto"> <i class="fas fa-envelope"></i>      Contacto</a></li>
+    </ul>
+    <div class="sidebar-cta">
+      <a href="https://wa.me/573107213128?text=Hola%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita%20en%20Rally%20Ingenier%C3%ADa%20Automotriz."
+         class="btn-cta-sidebar" target="_blank" rel="noopener">
+        <i class="fab fa-whatsapp"></i> Agendar Cita
+      </a>
+    </div>
+  </nav>
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <!-- ═══════════════════════════════════════════ MAIN ═══ -->
+  <main id="main-content">
+
+    <!-- ── INICIO ─────────────────────────────────────────── -->
+    <section id="inicio" class="section section-hero active">
+      <div class="hero-bg">
+        <div class="hero-grid"></div>
+        <div class="hero-noise"></div>
+        <div class="hero-accent-line line-1"></div>
+        <div class="hero-accent-line line-2"></div>
+        <div class="hero-gear-deco gear-deco-1"><svg viewBox="0 0 100 100"><use href="#gear-shape"/></svg></div>
+        <div class="hero-gear-deco gear-deco-2"><svg viewBox="0 0 100 100"><use href="#gear-shape"/></svg></div>
+      </div>
+      <div class="hero-content">
+        <div class="hero-logo-wrap reveal-up">
+          <img src="LOGO.jpeg" alt="Rally Ingeniería Automotriz" class="hero-logo"/>
+        </div>
+        <p class="hero-tagline reveal-up delay-1">Especialistas en vehículos diésel — camiones, buses y maquinaria pesada</p>
+        <div class="hero-pills reveal-up delay-2">
+          <span class="pill"><i class="fas fa-certificate"></i> Personal Certificado</span>
+          <span class="pill"><i class="fas fa-microchip"></i> Tecnología de Punta</span>
+          <span class="pill"><i class="fas fa-shield-halved"></i> Garantía Total</span>
+        </div>
+        <div class="hero-actions reveal-up delay-3">
+          <a href="https://wa.me/573107213128?text=Hola%2C%20quiero%20agendar%20una%20cita%20en%20Rally%20Ingenier%C3%ADa%20Automotriz."
+             class="btn-primary" target="_blank" rel="noopener">
+            <i class="fab fa-whatsapp"></i> Agendar Cita por WhatsApp
+          </a>
+          <button class="btn-secondary nav-link-btn" data-section="servicios">Ver Servicios</button>
+        </div>
+        <div class="hero-location reveal-up delay-4">
+          <i class="fas fa-location-dot"></i>
+          Cra. 32 No. 8-20, Sogamoso, Boyacá
+        </div>
+      </div>
+      <div class="hero-scroll-hint">
+        <span>Explora</span>
+        <div class="scroll-arrow"></div>
+      </div>
+    </section>
+
+    <!-- ── SOBRE NOSOTROS ──────────────────────────────────── -->
+    <section id="nosotros" class="section section-about hidden">
+      <div class="section-noise"></div>
+      <div class="container">
+        <div class="section-head">
+          <span class="section-label">Quiénes somos</span>
+          <h2 class="section-title">Sobre <em>Nosotros</em></h2>
+          <div class="title-line"></div>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-logo-col">
+            <div class="about-logo-frame">
+              <img src="LOGO.jpeg" alt="Rally Logo" class="about-logo"/>
+              <div class="about-logo-bg-ring"></div>
+            </div>
+            <div class="about-stat-row">
+              <div class="about-stat"><span class="stat-num">+10</span><span class="stat-lbl">Años de experiencia</span></div>
+              <div class="about-stat"><span class="stat-num">+500</span><span class="stat-lbl">Vehículos atendidos</span></div>
+              <div class="about-stat"><span class="stat-num">100%</span><span class="stat-lbl">Compromiso</span></div>
+            </div>
+          </div>
+          <div class="about-text-col">
+            <div class="card-mision card-info">
+              <div class="card-icon"><i class="fas fa-bullseye"></i></div>
+              <h3>Misión</h3>
+              <p>Ofrecer servicios integrales de mantenimiento, software y repuestos para vehículos diésel con la más alta calidad tecnológica, garantizando soluciones eficientes y personalizadas para cada cliente.</p>
+            </div>
+            <div class="card-vision card-info">
+              <div class="card-icon"><i class="fas fa-binoculars"></i></div>
+              <h3>Visión</h3>
+              <p>Ser el líder nacional y regional en ingeniería automotriz diésel, reconocidos por nuestra excelencia técnica, innovación constante y compromiso con la sostenibilidad.</p>
+            </div>
+            <div class="card-eco card-info">
+              <div class="card-icon"><i class="fas fa-leaf"></i></div>
+              <h3>Política Ambiental</h3>
+              <p>Implementamos prácticas sostenibles, gestión responsable de residuos, uso eficiente de recursos energéticos y cumplimiento riguroso de la normativa ambiental vigente.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="ventajas-row">
+          <h3 class="ventajas-title">¿Por qué elegir Rally?</h3>
+          <div class="ventajas-grid">
+            <div class="ventaja-card">
+              <div class="ventaja-icon"><i class="fas fa-user-gear"></i></div>
+              <p>Personal certificado y especializado</p>
+            </div>
+            <div class="ventaja-card">
+              <div class="ventaja-icon"><i class="fas fa-laptop-code"></i></div>
+              <p>Tecnología e infraestructura última generación</p>
+            </div>
+            <div class="ventaja-card">
+              <div class="ventaja-icon"><i class="fas fa-handshake"></i></div>
+              <p>Garantía y atención personalizada</p>
+            </div>
+            <div class="ventaja-card">
+              <div class="ventaja-icon"><i class="fas fa-wind"></i></div>
+              <p>Especialistas en AdBlue, EGR, Urea y DPF</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SERVICIOS ───────────────────────────────────────── -->
+    <section id="servicios" class="section section-services hidden">
+      <div class="section-noise"></div>
+      <div class="container">
+        <div class="section-head">
+          <span class="section-label">Lo que hacemos</span>
+          <h2 class="section-title">Nuestros <em>Servicios</em></h2>
+          <div class="title-line"></div>
+        </div>
+
+        <div class="services-tabs">
+          <button class="stab active" data-tab="generales">Generales</button>
+          <button class="stab" data-tab="mecanicos">Mecánicos</button>
+          <button class="stab" data-tab="electricos">Eléctricos</button>
+          <button class="stab" data-tab="electronicos">Electrónicos</button>
+        </div>
+
+        <div class="services-panels">
+          <div class="spanel active" id="tab-generales">
+            <div class="spanel-grid">
+              <div class="srv-card"><i class="fas fa-screwdriver-wrench"></i><h4>Mantenimiento Preventivo/Correctivo</h4><p>Programas completos de mantenimiento para extender la vida útil de su flota.</p></div>
+              <div class="srv-card"><i class="fas fa-computer"></i><h4>Diagnóstico Computarizado</h4><p>Identificación precisa de fallas con equipos de última tecnología.</p></div>
+              <div class="srv-card"><i class="fas fa-box-open"></i><h4>Venta de Repuestos</h4><p>Repuestos originales y alternativos de alta calidad para su vehículo diésel.</p></div>
+              <div class="srv-card"><i class="fas fa-truck"></i><h4>Logística para Flotas</h4><p>Gestión integral de mantenimiento para flotas empresariales.</p></div>
+              <div class="srv-card"><i class="fas fa-headset"></i><h4>Asesoría Técnica</h4><p>Orientación especializada para la toma de decisiones técnicas.</p></div>
+              <div class="srv-card"><i class="fas fa-code-branch"></i><h4>Actualización de Software</h4><p>Reprogramación y actualización de módulos electrónicos del vehículo.</p></div>
+            </div>
+          </div>
+
+          <div class="spanel" id="tab-mecanicos">
+            <div class="spanel-grid">
+              <div class="srv-card"><i class="fas fa-engine"></i><h4>Motores Diésel</h4><p>Overhaul y reparaciones mayores: Scania, Mercedes-Benz, Chevrolet, Volvo.</p></div>
+              <div class="srv-card"><i class="fas fa-gears"></i><h4>Transmisión y Embrague</h4><p>Sistemas de transmisión, embrague y cajas de cambios.</p></div>
+              <div class="srv-card"><i class="fas fa-circle-stop"></i><h4>Frenos</h4><p>Sistemas de frenos de aire, ABS y EBS para vehículos pesados.</p></div>
+              <div class="srv-card"><i class="fas fa-car-side"></i><h4>Suspensión y Dirección</h4><p>Revisión y reparación de suspensión, dirección y tren rodante.</p></div>
+              <div class="srv-card"><i class="fas fa-temperature-high"></i><h4>Sistema de Refrigeración</h4><p>Mantenimiento del sistema de enfriamiento del motor.</p></div>
+            </div>
+          </div>
+
+          <div class="spanel" id="tab-electricos">
+            <div class="spanel-grid">
+              <div class="srv-card"><i class="fas fa-bolt"></i><h4>Arranque y Carga</h4><p>Diagnóstico y reparación de sistemas de arranque y carga eléctrica.</p></div>
+              <div class="srv-card"><i class="fas fa-car-battery"></i><h4>Alternadores y Baterías</h4><p>Revisión, recarga y reemplazo de alternadores y baterías.</p></div>
+              <div class="srv-card"><i class="fas fa-plug"></i><h4>Cableado</h4><p>Reparación e instalación de cableado eléctrico del vehículo.</p></div>
+              <div class="srv-card"><i class="fas fa-lightbulb"></i><h4>Iluminación</h4><p>Sistemas de iluminación interior y exterior, conversiones LED.</p></div>
+            </div>
+          </div>
+
+          <div class="spanel" id="tab-electronicos">
+            <div class="spanel-grid">
+              <div class="srv-card"><i class="fas fa-stethoscope"></i><h4>Escáner Especializado</h4><p>Diagnóstico electrónico para Scania, Mercedes-Benz, Chevrolet y Volvo.</p></div>
+              <div class="srv-card"><i class="fas fa-microchip"></i><h4>Gestión de Motor (EMS)</h4><p>Reprogramación de ECUs, módulos y comunicación CAN Bus.</p></div>
+              <div class="srv-card"><i class="fas fa-sliders"></i><h4>Calibración y Configuración</h4><p>Ajuste fino de parámetros electrónicos para máximo rendimiento.</p></div>
+              <div class="srv-card"><i class="fas fa-wind"></i><h4>AdBlue / EGR / DPF / Urea</h4><p>Diagnóstico y solución en sistemas de emisiones y postratamiento.</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="services-cta">
+          <p>¿Listo para llevar su vehículo?</p>
+          <a href="https://wa.me/573107213128?text=Hola%2C%20necesito%20información%20sobre%20sus%20servicios%20en%20Rally%20Ingenier%C3%ADa%20Automotriz."
+             class="btn-primary" target="_blank" rel="noopener">
+            <i class="fab fa-whatsapp"></i> Consultar por WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── REPUESTOS ───────────────────────────────────────── -->
+    <section id="repuestos" class="section section-parts hidden">
+      <div class="section-noise"></div>
+      <div class="container">
+        <div class="section-head">
+          <span class="section-label">Tienda</span>
+          <h2 class="section-title">Venta de <em>Repuestos</em></h2>
+          <div class="title-line"></div>
+          <p class="section-desc">Repuestos originales y alternativos de alta calidad para vehículos diésel pesados. Contáctenos para disponibilidad y precios.</p>
+        </div>
+
+        <div class="parts-categories">
+          <div class="part-cat">
+            <div class="part-cat-icon"><i class="fas fa-engine"></i></div>
+            <h4>Motor y Tren Motriz</h4>
+            <ul>
+              <li>Pistones y anillos</li>
+              <li>Bielas y cigüeñal</li>
+              <li>Juntas y empaques</li>
+              <li>Filtros de motor</li>
+              <li>Correas y cadenas</li>
+            </ul>
+            <a href="https://wa.me/573107213128?text=Hola%2C%20me%20interesa%20un%20repuesto%20de%20Motor%20y%20Tren%20Motriz." class="btn-part-wa" target="_blank"><i class="fab fa-whatsapp"></i> Consultar</a>
+          </div>
+          <div class="part-cat">
+            <div class="part-cat-icon"><i class="fas fa-circle-stop"></i></div>
+            <h4>Frenos y Suspensión</h4>
+            <ul>
+              <li>Pastillas y discos</li>
+              <li>Tambores y campanas</li>
+              <li>Amortiguadores</li>
+              <li>Muelles y resortes</li>
+              <li>Bujes y rotulas</li>
+            </ul>
+            <a href="https://wa.me/573107213128?text=Hola%2C%20me%20interesa%20un%20repuesto%20de%20Frenos%20y%20Suspensi%C3%B3n." class="btn-part-wa" target="_blank"><i class="fab fa-whatsapp"></i> Consultar</a>
+          </div>
+          <div class="part-cat">
+            <div class="part-cat-icon"><i class="fas fa-gears"></i></div>
+            <h4>Transmisión</h4>
+            <ul>
+              <li>Discos de embrague</li>
+              <li>Volantes de motor</li>
+              <li>Sincronizadores</li>
+              <li>Rodamientos de caja</li>
+              <li>Diferenciales</li>
+            </ul>
+            <a href="https://wa.me/573107213128?text=Hola%2C%20me%20interesa%20un%20repuesto%20de%20Transmisi%C3%B3n." class="btn-part-wa" target="_blank"><i class="fab fa-whatsapp"></i> Consultar</a>
+          </div>
+          <div class="part-cat">
+            <div class="part-cat-icon"><i class="fas fa-car-battery"></i></div>
+            <h4>Eléctrico y Electrónico</h4>
+            <ul>
+              <li>Baterías industriales</li>
+              <li>Alternadores</li>
+              <li>Sensores y actuadores</li>
+              <li>Módulos ECU</li>
+              <li>Inyectores diésel</li>
+            </ul>
+            <a href="https://wa.me/573107213128?text=Hola%2C%20me%20interesa%20un%20repuesto%20El%C3%A9ctrico%20o%20Electr%C3%B3nico." class="btn-part-wa" target="_blank"><i class="fab fa-whatsapp"></i> Consultar</a>
+          </div>
+          <div class="part-cat">
+            <div class="part-cat-icon"><i class="fas fa-filter"></i></div>
+            <h4>Filtros y Lubricantes</h4>
+            <ul>
+              <li>Filtros de aceite</li>
+              <li>Filtros de combustible</li>
+              <li>Filtros de aire</li>
+              <li>Aceites de motor</li>
+              <li>Líquidos especiales</li>
+            </ul>
+            <a href="https://wa.me/573107213128?text=Hola%2C%20me%20interesa%20un%20repuesto%20de%20Filtros%20y%20Lubricantes." class="btn-part-wa" target="_blank"><i class="fab fa-whatsapp"></i> Consultar</a>
+          </div>
+          <div class="part-cat">
+            <div class="part-cat-icon"><i class="fas fa-wind"></i></div>
+            <h4>Sistema de Emisiones</h4>
+            <ul>
+              <li>Válvulas EGR</li>
+              <li>Filtros DPF</li>
+              <li>Catalizadores</li>
+              <li>Sensores AdBlue</li>
+              <li>Dosificadores Urea</li>
+            </ul>
+            <a href="https://wa.me/573107213128?text=Hola%2C%20me%20interesa%20un%20repuesto%20de%20Sistema%20de%20Emisiones." class="btn-part-wa" target="_blank"><i class="fab fa-whatsapp"></i> Consultar</a>
+          </div>
+        </div>
+
+        <div class="brands-strip">
+          <p class="brands-label">Marcas que atendemos</p>
+          <div class="brands-logos">
+            <span class="brand-badge">SCANIA</span>
+            <span class="brand-badge">Mercedes-Benz</span>
+            <span class="brand-badge">VOLVO</span>
+            <span class="brand-badge">Chevrolet</span>
+            <span class="brand-badge">MAN</span>
+            <span class="brand-badge">International</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CONTACTO ────────────────────────────────────────── -->
+    <section id="contacto" class="section section-contact hidden">
+      <div class="section-noise"></div>
+      <div class="container">
+        <div class="section-head">
+          <span class="section-label">Escríbenos</span>
+          <h2 class="section-title">Contáctenos</h2>
+          <div class="title-line"></div>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-info-col">
+            <div class="contact-logo-wrap">
+              <img src="LOGO.jpeg" alt="Rally Logo" class="contact-logo"/>
+            </div>
+
+            <div class="contact-card">
+              <div class="cc-icon"><i class="fas fa-location-dot"></i></div>
+              <div class="cc-body">
+                <h4>Ubicación</h4>
+                <p>Cra. 32 No. 8-20<br/>Sogamoso, Boyacá</p>
+              </div>
+            </div>
+            <div class="contact-card">
+              <div class="cc-icon"><i class="fas fa-phone"></i></div>
+              <div class="cc-body">
+                <h4>Teléfonos</h4>
+                <a href="tel:+573107213128">310 721 3128</a><br/>
+                <a href="tel:+573135847773">313 584 7773</a>
+              </div>
+            </div>
+            <div class="contact-card">
+              <div class="cc-icon"><i class="fas fa-envelope"></i></div>
+              <div class="cc-body">
+                <h4>Correo Electrónico</h4>
+                <a href="mailto:rallyingenieriaautomotriz@hotmail.co">rallyingenieriaautomotriz@hotmail.co</a>
+              </div>
+            </div>
+
+            <div class="whatsapp-ctas">
+              <h4 class="wa-title"><i class="fab fa-whatsapp"></i> Agendar cita directa</h4>
+              <a href="https://wa.me/573107213128?text=Hola%2C%20quiero%20agendar%20una%20cita%20en%20Rally%20Ingenier%C3%ADa%20Automotriz." class="btn-wa-contact" target="_blank" rel="noopener">
+                <i class="fab fa-whatsapp"></i> WhatsApp · 310 721 3128
+              </a>
+              <a href="https://wa.me/573135847773?text=Hola%2C%20quiero%20agendar%20una%20cita%20en%20Rally%20Ingenier%C3%ADa%20Automotriz." class="btn-wa-contact" target="_blank" rel="noopener">
+                <i class="fab fa-whatsapp"></i> WhatsApp · 313 584 7773
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-map-col">
+            <div class="map-container">
+              <iframe
+                title="Ubicación Rally Ingeniería Automotriz"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.8!2d-72.925!3d5.716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNcKwNDMnMDIuMCJOIDcywrA1NSczMC4wIlc!5e0!3m2!1ses!2sco!4v1700000000000"
+                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+              <div class="map-label">
+                <i class="fas fa-location-dot"></i> Cra. 32 No. 8-20 · Sogamoso, Boyacá
+              </div>
+            </div>
+
+            <div class="schedule-card">
+              <h4><i class="fas fa-clock"></i> Horario de Atención</h4>
+              <div class="schedule-row"><span>Lunes – Viernes</span><span class="hrs">7:00 AM – 6:00 PM</span></div>
+              <div class="schedule-row"><span>Sábado</span><span class="hrs">8:00 AM – 2:00 PM</span></div>
+              <div class="schedule-row closed"><span>Domingo</span><span class="hrs">Cerrado</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════ FOOTER ═══ -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <img src="LOGO.jpeg" alt="Rally Logo" class="footer-logo"/>
+      <p>© 2024 Rally Ingeniería Automotriz · Sogamoso, Boyacá · Todos los derechos reservados</p>
+      <div class="footer-links">
+        <a href="tel:+573107213128">310 721 3128</a>
+        <span>·</span>
+        <a href="mailto:rallyingenieriaautomotriz@hotmail.co">rallyingenieriaautomotriz@hotmail.co</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/573107213128?text=Hola%2C%20quiero%20agendar%20una%20cita%20en%20Rally%20Ingenier%C3%ADa%20Automotriz."
+     class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+    <span class="wa-tooltip">Agendar Cita</span>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>
