@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rally Ingeniería Automotriz</title>
-  <link rel="stylesheet" href="css/index.css" />
+  <title>Servicios - Rally Ingeniería Automotriz</title>
+  <link rel="stylesheet" href="css/servicios.css" />
   <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Bebas+Neue&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 </head>
@@ -29,7 +29,6 @@
         </svg>
       </div>
       <div class="loader-brand">
-        
         <div class="loader-bar"><div class="loader-fill"></div></div>
         <p class="loader-text">Cargando sistema...</p>
       </div>
@@ -81,8 +80,8 @@
       <img src="imagenes/LOGO.jpeg" alt="Rally Logo" class="sidebar-logo"/>
     </div>
     <ul class="nav-links">
-      <li><a href="#inicio"    class="nav-link" data-section="inicio">   <i class="fas fa-home"></i>          Inicio</a></li>
-      <li><a href="nosotros.html"  class="nav-link"> <i class="fas fa-users-gear"></i>    Sobre Nosotros</a></li>
+      <li><a href="index.html"    class="nav-link">             <i class="fas fa-home"></i>          Inicio</a></li>
+      <li><a href="nosotros.html"  class="nav-link">  <i class="fas fa-users-gear"></i>    Sobre Nosotros</a></li>
       <li><a href="servicios.html" class="nav-link"><i class="fas fa-wrench"></i>        Servicios</a></li>
       <li><a href="repuestos.html" class="nav-link"><i class="fas fa-cogs"></i>          Repuestos</a></li>
       <li><a href="contacto.html"  class="nav-link"> <i class="fas fa-envelope"></i>      Contacto</a></li>
@@ -99,41 +98,71 @@
   <!-- ═══════════════════════════════════════════ MAIN ═══ -->
   <main id="main-content">
 
-    <!-- ── INICIO ─────────────────────────────────────────── -->
-    <section id="inicio" class="section section-hero active">
-      <div class="hero-bg">
-        <div class="hero-grid"></div>
-        <div class="hero-noise"></div>
-        <div class="hero-accent-line line-1"></div>
-        <div class="hero-accent-line line-2"></div>
-        <div class="hero-gear-deco gear-deco-1"><svg viewBox="0 0 100 100"><use href="#gear-shape"/></svg></div>
-        <div class="hero-gear-deco gear-deco-2"><svg viewBox="0 0 100 100"><use href="#gear-shape"/></svg></div>
-      </div>
-      <div class="hero-content">
-        <div class="hero-logo-wrap reveal-up">
-          <img src="imagenes/LOGO.jpeg" alt="Rally Ingeniería Automotriz" class="hero-logo"/>
+    <!-- ── SERVICIOS ───────────────────────────────────────── -->
+    <section id="servicios" class="section section-services active">
+      <div class="section-noise"></div>
+      <div class="container">
+        <div class="section-head">
+          <span class="section-label">Lo que hacemos</span>
+          <h2 class="section-title">Nuestros <em>Servicios</em></h2>
+          <div class="title-line"></div>
         </div>
-        <p class="hero-tagline reveal-up delay-1">Especialistas en vehículos diésel — camiones, buses y maquinaria pesada</p>
-        <div class="hero-pills reveal-up delay-2">
-          <span class="pill"><i class="fas fa-certificate"></i> Personal Certificado</span>
-          <span class="pill"><i class="fas fa-microchip"></i> Tecnología de Punta</span>
-          <span class="pill"><i class="fas fa-shield-halved"></i> Garantía Total</span>
+
+        <div class="services-tabs">
+          <button class="stab active" data-tab="generales">Generales</button>
+          <button class="stab" data-tab="mecanicos">Mecánicos</button>
+          <button class="stab" data-tab="electricos">Eléctricos</button>
+          <button class="stab" data-tab="electronicos">Electrónicos</button>
         </div>
-        <div class="hero-actions reveal-up delay-3">
-          <a href="https://wa.me/573107213128?text=Hola%2C%20quiero%20agendar%20una%20cita%20en%20Rally%20Ingenier%C3%ADa%20Automotriz."
+
+        <div class="services-panels">
+          <div class="spanel active" id="tab-generales">
+            <div class="spanel-grid">
+              <div class="srv-card"><i class="fas fa-screwdriver-wrench"></i><h4>Mantenimiento Preventivo/Correctivo</h4><p>Programas completos de mantenimiento para extender la vida útil de su flota.</p></div>
+              <div class="srv-card"><i class="fas fa-computer"></i><h4>Diagnóstico Computarizado</h4><p>Identificación precisa de fallas con equipos de última tecnología.</p></div>
+              <div class="srv-card"><i class="fas fa-box-open"></i><h4>Venta de Repuestos</h4><p>Repuestos originales y alternativos de alta calidad para su vehículo diésel.</p></div>
+              <div class="srv-card"><i class="fas fa-truck"></i><h4>Logística para Flotas</h4><p>Gestión integral de mantenimiento para flotas empresariales.</p></div>
+              <div class="srv-card"><i class="fas fa-headset"></i><h4>Asesoría Técnica</h4><p>Orientación especializada para la toma de decisiones técnicas.</p></div>
+              <div class="srv-card"><i class="fas fa-code-branch"></i><h4>Actualización de Software</h4><p>Reprogramación y actualización de módulos electrónicos del vehículo.</p></div>
+            </div>
+          </div>
+
+          <div class="spanel" id="tab-mecanicos">
+            <div class="spanel-grid">
+              <div class="srv-card"><i class="fas fa-engine"></i><h4>Motores Diésel</h4><p>Overhaul y reparaciones mayores: Scania, Mercedes-Benz, Chevrolet, Volvo.</p></div>
+              <div class="srv-card"><i class="fas fa-gears"></i><h4>Transmisión y Embrague</h4><p>Sistemas de transmisión, embrague y cajas de cambios.</p></div>
+              <div class="srv-card"><i class="fas fa-circle-stop"></i><h4>Frenos</h4><p>Sistemas de frenos de aire, ABS y EBS para vehículos pesados.</p></div>
+              <div class="srv-card"><i class="fas fa-car-side"></i><h4>Suspensión y Dirección</h4><p>Revisión y reparación de suspensión, dirección y tren rodante.</p></div>
+              <div class="srv-card"><i class="fas fa-temperature-high"></i><h4>Sistema de Refrigeración</h4><p>Mantenimiento del sistema de enfriamiento del motor.</p></div>
+            </div>
+          </div>
+
+          <div class="spanel" id="tab-electricos">
+            <div class="spanel-grid">
+              <div class="srv-card"><i class="fas fa-bolt"></i><h4>Arranque y Carga</h4><p>Diagnóstico y reparación de sistemas de arranque y carga eléctrica.</p></div>
+              <div class="srv-card"><i class="fas fa-car-battery"></i><h4>Alternadores y Baterías</h4><p>Revisión, recarga y reemplazo de alternadores y baterías.</p></div>
+              <div class="srv-card"><i class="fas fa-plug"></i><h4>Cableado</h4><p>Reparación e instalación de cableado eléctrico del vehículo.</p></div>
+              <div class="srv-card"><i class="fas fa-lightbulb"></i><h4>Iluminación</h4><p>Sistemas de iluminación interior y exterior, conversiones LED.</p></div>
+            </div>
+          </div>
+
+          <div class="spanel" id="tab-electronicos">
+            <div class="spanel-grid">
+              <div class="srv-card"><i class="fas fa-stethoscope"></i><h4>Escáner Especializado</h4><p>Diagnóstico electrónico para Scania, Mercedes-Benz, Chevrolet y Volvo.</p></div>
+              <div class="srv-card"><i class="fas fa-microchip"></i><h4>Gestión de Motor (EMS)</h4><p>Reprogramación de ECUs, módulos y comunicación CAN Bus.</p></div>
+              <div class="srv-card"><i class="fas fa-sliders"></i><h4>Calibración y Configuración</h4><p>Ajuste fino de parámetros electrónicos para máximo rendimiento.</p></div>
+              <div class="srv-card"><i class="fas fa-wind"></i><h4>AdBlue / EGR / DPF / Urea</h4><p>Diagnóstico y solución en sistemas de emisiones y postratamiento.</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="services-cta">
+          <p>¿Listo para llevar su vehículo?</p>
+          <a href="https://wa.me/573107213128?text=Hola%2C%20necesito%20información%20sobre%20sus%20servicios%20en%20Rally%20Ingenier%C3%ADa%20Automotriz."
              class="btn-primary" target="_blank" rel="noopener">
-            <i class="fab fa-whatsapp"></i> Agendar Cita por WhatsApp
+            <i class="fab fa-whatsapp"></i> Consultar por WhatsApp
           </a>
-          <a href="servicios.html" class="btn-secondary nav-link-btn">Ver Servicios</a>
         </div>
-        <div class="hero-location reveal-up delay-4">
-          <i class="fas fa-location-dot"></i>
-          Cra. 32 No. 8-20, Sogamoso, Boyacá
-        </div>
-      </div>
-      <div class="hero-scroll-hint">
-        <span>Explora</span>
-        <div class="scroll-arrow"></div>
       </div>
     </section>
 
@@ -158,9 +187,7 @@
     <i class="fab fa-whatsapp"></i>
     <span class="wa-tooltip">Agendar Cita</span>
   </a>
-<script>
-(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="3d5XV52FJ38g5QpiD-GB3";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
-</script>
+
   <script src="script.js"></script>
 </body>
 </html>
