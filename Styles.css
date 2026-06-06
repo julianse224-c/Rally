@@ -401,10 +401,27 @@ img { max-width: 100%; display: block; }
 .gear-deco-2 { width: 200px; height: 200px; bottom: 40px; left: 20px; animation: spin-gear-rev 20s linear infinite; }
 
 .hero-content {
-  position: relative; z-index: 1;
-  max-width: 1200px; margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 100px 24px 80px;
   width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-pills,
+.hero-actions {
+  justify-content: center;
+}
+
+.hero-location {
+  justify-content: center;
+}
 }
 .hero-logo-wrap { margin-bottom: 32px; }
 .hero-logo {
