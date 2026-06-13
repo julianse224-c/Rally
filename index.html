@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rally Ingeniería Automotriz</title>
+  <link rel="stylesheet" href="css/index.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Bebas+Neue&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════ LOADER ═══ -->
+  <div id="page-loader">
+    <div class="loader-scene">
+      <div class="loader-gear gear-big">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <use href="#gear-shape"/>
+        </svg>
+      </div>
+      <div class="loader-gear gear-small">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <use href="#gear-shape"/>
+        </svg>
+      </div>
+      <div class="loader-wrench">
+        <svg viewBox="0 0 60 120" xmlns="http://www.w3.org/2000/svg">
+          <use href="#wrench-shape"/>
+        </svg>
+      </div>
+      <div class="loader-brand">
+        
+        <div class="loader-bar"><div class="loader-fill"></div></div>
+        <p class="loader-text">Cargando sistema...</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════ SVG DEFS ═══ -->
+  <svg style="display:none">
+    <defs>
+      <symbol id="gear-shape" viewBox="0 0 100 100">
+        <path fill="currentColor" d="
+          M43.3,0 L56.7,0 L59.4,14.2 C62.8,15.3 66,16.9 68.9,18.9 L82.7,13.8 L92.2,23.3 L87.1,37.1
+          C89.1,40,90.7,43.2,91.8,46.6 L106,49.3 L106,62.7 L91.8,65.4 C90.7,68.8,89.1,72,87.1,74.9
+          L92.2,88.7 L82.7,98.2 L68.9,93.1 C66,95.1,62.8,96.7,59.4,97.8 L56.7,112 L43.3,112 L40.6,97.8
+          C37.2,96.7,34,95.1,31.1,93.1 L17.3,98.2 L7.8,88.7 L12.9,74.9 C10.9,72,9.3,68.8,8.2,65.4
+          L-6,62.7 L-6,49.3 L8.2,46.6 C9.3,43.2,10.9,40,12.9,37.1 L7.8,23.3 L17.3,13.8 L31.1,18.9
+          C34,16.9,37.2,15.3,40.6,14.2 Z
+          M50,34 A16,16 0 1,0 50,66 A16,16 0 1,0 50,34 Z"/>
+      </symbol>
+      <symbol id="wrench-shape" viewBox="0 0 60 120">
+        <path fill="currentColor" d="
+          M38,0 C52,4 60,16 56,28 C54,34 50,38 44,40 L44,96 C44,102 40,108 34,110
+          C28,112 22,108 20,102 L20,40 C14,38 10,34 8,28 C4,16 12,4 26,0
+          C22,6 22,14 26,18 L30,20 L34,18 C38,14 38,6 34,0 Z"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- ═══════════════════════════════════════════ TRANSITION OVERLAY ═══ -->
+  <div id="page-transition">
+    <div class="transition-gear t-gear-1">
+      <svg viewBox="0 0 100 100"><use href="#gear-shape"/></svg>
+    </div>
+    <div class="transition-gear t-gear-2">
+      <svg viewBox="0 0 100 100"><use href="#gear-shape"/></svg>
+    </div>
+    <div class="transition-wrench t-wrench">
+      <svg viewBox="0 0 60 120"><use href="#wrench-shape"/></svg>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════ SIDEBAR MENU ═══ -->
+  <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+    <span></span><span></span><span></span>
+  </button>
+
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <img src="imagenes/LOGO-RALLY.png" alt="Rally Logo" class="sidebar-logo"/>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#inicio"    class="nav-link" data-section="inicio">   <i class="fas fa-home"></i>          Inicio</a></li>
+      <li><a href="nosotros.html"  class="nav-link"> <i class="fas fa-users-gear"></i>    Sobre Nosotros</a></li>
+      <li><a href="servicios.html" class="nav-link"><i class="fas fa-wrench"></i>        Servicios</a></li>
+      <li><a href="repuestos.html" class="nav-link"><i class="fas fa-cogs"></i>          Repuestos</a></li>
+      <li><a href="contacto.html"  class="nav-link"> <i class="fas fa-envelope"></i>      Contacto</a></li>
+    </ul>
+    <div class="sidebar-cta">
+      <a href="https://wa.me/573107213128?text=Hola%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita%20en%20Rally%20Ingenier%C3%ADa%20Automotriz."
+         class="btn-cta-sidebar" target="_blank" rel="noopener">
+        <i class="fab fa-whatsapp"></i> Agendar Cita
+      </a>
+    </div>
+  </nav>
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <!-- ═══════════════════════════════════════════ MAIN ═══ -->
+  <main id="main-content">
+
+    <!-- ── INICIO ─────────────────────────────────────────── -->
+    <section id="inicio" class="section section-hero active">
+      <div class="hero-bg">
+        <div class="hero-grid"></div>
+        <div class="hero-noise"></div>
+        <div class="hero-accent-line line-1"></div>
+        <div class="hero-accent-line line-2"></div>
+        <div class="hero-gear-deco gear-deco-1"><svg viewBox="0 0 100 100"><use href="#gear-shape"/></svg></div>
+        <div class="hero-gear-deco gear-deco-2"><svg viewBox="0 0 100 100"><use href="#gear-shape"/></svg></div>
+      </div>
+      <div class="hero-content">
+        <div class="hero-logo-wrap reveal-up">
+          <img src="imagenes/LOGO-RALLY.png" alt="Rally Ingeniería Automotriz" class="hero-logo"/>
+        </div>
+        <h1 class="hero-title reveal-up delay-1">
+         ESPECIALISTAS EN MOTORES DIESEL</h1>
+         <p class="hero-subtitle reveal-up delay-2">Reparación profesional de camiones, buses y maquinaria pesada con tecnología de punta y garantía en todos nuestros servicios.</p>
+        <div class="hero-pills reveal-up delay-2">
+          <span class="pill"><i class="fas fa-certificate"></i> Personal Certificado</span>
+          <span class="pill"><i class="fas fa-microchip"></i> Tecnología de Punta</span>
+          <span class="pill"><i class="fas fa-shield-halved"></i> Garantía Total</span>
+        </div>
+        <div class="hero-stats reveal-up delay-2">
+
+    <div class="stat-box">
+    <h2 class="counter" data-target="10">0</h2>
+    <span>Años de experiencia</span>
+</div>
+
+<div class="stat-box">
+    <h2 class="counter" data-target="1500">0</h2>
+    <span>Vehículos atendidos</span>
+</div>
+
+<div class="stat-box">
+    <h2 class="counter" data-target="100" data-suffix="%">0</h2>
+    <span>Garantía</span>
+</div>
+
+</div>
+      
+      
+        <div class="hero-actions reveal-up delay-3">
+          <a href="https://wa.me/573107213128?text=Hola%2C%20quiero%20agendar%20una%20cita%20en%20Rally%20Ingenier%C3%ADa%20Automotriz."
+             class="btn-primary" target="_blank" rel="noopener">
+            <i class="fab fa-whatsapp"></i> Agendar Cita
+          </a>
+          <a href="servicios.html" class="btn-secondary nav-link-btn">Ver Servicios</a>
+        </div>
+        <div class="hero-location reveal-up delay-4">
+          <i class="fas fa-location-dot"></i>
+          Cra. 32 No. 8-20, Sogamoso, Boyacá
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════ FOOTER ═══ -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <img src="imagenes/LOGO-RALLY.png" alt="Rally Logo" class="footer-logo"/>
+      <p>© 2024 Rally Ingeniería Automotriz · Sogamoso, Boyacá · Todos los derechos reservados</p>
+      <div class="footer-links">
+        <a href="tel:+573107213128">310 721 3128</a>
+        <span>·</span>
+        <a href="mailto:rallyingenieriaautomotriz@hotmail.co">rallyingenieriaautomotriz@hotmail.co</a>
+      </div>
+    </div>
+  </footer>
+  
+<script>
+(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="3d5XV52FJ38g5QpiD-GB3";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+</script>
+  <script src="script.js"></script>
+
+  <script>
+
+const counters = document.querySelectorAll(".counter");
+
+const observer = new IntersectionObserver((entries)=>{
+
+    entries.forEach(entry=>{
+
+        if(entry.isIntersecting){
+
+            const counter = entry.target;
+
+            const target = +counter.dataset.target;
+
+            const suffix = counter.dataset.suffix || "+";
+
+            let current = 0;
+
+            const increment = target / 80;
+
+            function update(){
+
+                current += increment;
+
+                if(current < target){
+
+                    counter.textContent = Math.floor(current);
+
+                    requestAnimationFrame(update);
+
+                }else{
+
+                    counter.textContent = target + suffix;
+
+                }
+
+            }
+
+            update();
+
+            observer.unobserve(counter);
+
+        }
+
+    });
+
+},{threshold:0.6});
+
+counters.forEach(counter=>{
+
+  counter.style.transform = "scale(1.1)";
+
+setTimeout(()=>{
+
+    counter.style.transform = "scale(1)";
+
+},200);
+
+    observer.observe(counter);
+
+});
+
+</script>
+</body>
+</html>
