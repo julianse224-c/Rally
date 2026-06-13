@@ -261,7 +261,17 @@ document.addEventListener('DOMContentLoaded', () => {
     console.error('Rally Bot elements not found!');
   }
 
-  /* ── 11. Active highlight on initial load ─────────────── */
-  updateActiveNavLink('inicio');
+  const scrollBtn = document.getElementById("scrollToNosotros");
+
+if (scrollBtn) {
+
+    scrollBtn.addEventListener("click", () => {
+
+        navigateTo("nosotros");
+
+    });
+
+}
+
 
 });
